@@ -42,6 +42,89 @@ class CBS {
             }
             size = size + 1;
 
+        
+            }
+        
+        else if (option == 2) {
+
+                System.out.println("\nChange Customer Name Menu");
+                System.out.print("\nEnter your Account Number: ");
+
+                int accountIndex;
+                String temp;
+
+                accountIndex = sc.nextInt();
+                sc.nextLine();
+
+                if (accountIndex > size) {
+                    System.out.println("Account does not exist.");
+                    System.out.println("Terminating...");
+                } else {
+                    temp = accountName[accountIndex];
+                    System.out.print("Enter the new name: ");
+                    String name = sc.nextLine();
+                    accountName[accountIndex] = name;
+                    System.out.println("Name is successfully updated from " + temp + " to " + name + ". \n"); System.out.println("Name is successfully updated from " + temp + " to " + name + ". \n");
+                }
+
+                System.out.println("_______________________________________________________________");
         }
+            else if (option == 3) {
+            ystem.out.println("\nCheck Account Balance Menu");
+                System.out.print("\nEnter your Account Number: ");
+
+                int accountIndex;
+                accountIndex = sc.nextInt();
+
+                if (accountIndex > size) {
+                    System.out.println("Account does not exist.");
+                    System.out.println("Terminating...");
+                } else {
+                    System.out.println(
+                            accountName[accountIndex] + " your balance is " + accountBalance[accountIndex] + "Rs.");
+                }
+			System.out.println("________________________________________________");
+        }
+        else if (option == 4) {
+            System.out.println("\nUpdate Account Balance Menu ");
+                System.out.print("\nEnter your Account Number: ");
+
+                int accountIndex;
+                accountIndex = sc.nextInt();
+
+                if (accountIndex > size) {
+                    System.out.println("Account does not exist.");
+                    System.out.println("Terminating...");
+                } else {
+                    System.out.print("Enter the amount to be deposited: ");
+                    double amt = sc.nextDouble();
+
+
+                    accountbalance[accountIndex] += amt; 
+                     System.out.println(accountName[accountIndex] + " your updated balance is : "
+                            + accountBalance[accountIndex] + " RS. \n ");
+        }
+         }
+
+         else if (option == 5) {
+				System.out.println("Accounts registered\n");
+
+                for (int i = 100; i < size; i++) {
+                    System.out.println("Account Number: " + i + ", Name: " + accountName[i] + ", Balance: "
+                            + accountBalance[i] + "Rs. \n ");
+                }
+                }
+
+
+                else if (option == 6) {
+
+                System.out.println("Terminating...");
+                infiniteLoop=false;
+            } else {
+
+                System.out.println("\n Invalid input.");
+                System.out.println("Terminating...");
+                System.exit(0);
     }
+}
 }
